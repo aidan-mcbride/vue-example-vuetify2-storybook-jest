@@ -1,6 +1,9 @@
 # Vue Example: Vuetify + StoryBook + Jest
 
-<img src="https://avatars3.githubusercontent.com/u/6128107?s=200&v=4" alt="vue.js logo" href="https://vuejs.org" width=30 height=26 /><img src="https://avatars2.githubusercontent.com/u/22138497?s=200&v=4" alt="vuetify logo" href="https://vuetifyjs.com/en/" width=30 height=26 /><img src="https://avatars0.githubusercontent.com/u/22632046?s=200&v=4" alt="storybook logo" href="https://storybook.js.org/" width=30 height=26 /><img src="https://jestjs.io/img/jest.png" alt="jest logo" href="https://jestjs.io/" width=30 height=26 />
+<img src="https://avatars3.githubusercontent.com/u/6128107?s=200&v=4" alt="vue.js logo" href="https://vuejs.org" width=50 height=50 />
+<img src="https://avatars2.githubusercontent.com/u/22138497?s=200&v=4" alt="vuetify logo" href="https://vuetifyjs.com/en/" width=50 height=50 />
+<img src="https://avatars0.githubusercontent.com/u/22632046?s=200&v=4" alt="storybook logo" href="https://storybook.js.org/" width=50 height=50 />
+<img src="https://jestjs.io/img/jest.png" alt="jest logo" href="https://jestjs.io/" width=50 height=50 />
 
 ---
 
