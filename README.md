@@ -5,10 +5,12 @@
 ---
 
 > **🚨️IMPORTANT NOTE 1:🚨️**
+>
 > The raison d'être for this project is that - as of when this project is last updated - the [Vuetify storybook plugin](https://github.com/vuetifyjs/vue-cli-plugins/tree/master/packages/vue-cli-plugin-vuetify-storybook) does not use Storybook's new _[component story format](https://medium.com/storybookjs/component-story-format-66f4c32366df)_, which is the format used in all of Storybook's documentation and tutorials.
 > If, in the future, the Vuetify storybook plugin is updated to use the component story format(and you know how to unit test with vue and vuetify) then this project will become essentially obsolete.
 
 > **🚨️IMPORTANT NOTE 2🚨️**
+>
 > I haven't figured out how to get [Storyshots](https://github.com/storybookjs/storybook/tree/master/addons/storyshots/storyshots-core) working with Vuetify. If you know how to solve this, please let me know somehow. :)
 
 ---
@@ -33,10 +35,8 @@ vue create vue-example-vuetify2-storybook-jest
 
 ```
 ? Please pick a preset: Manually select features
-? Check the features needed for your project: Babel, Vuex, CSS Pre-processors, Linter, Un
-it
-? Pick a CSS pre-processor (PostCSS, Autoprefixer and CSS Modules are supported by defaul
-t): Sass/SCSS (with dart-sass)
+? Check the features needed for your project: Babel, Vuex, CSS Pre-processors, Linter, Unit
+? Pick a CSS pre-processor (PostCSS, Autoprefixer and CSS Modules are supported by default): Sass/SCSS (with dart-sass)
 ? Pick a linter / formatter config: Prettier
 ? Pick additional lint features: Lint on save, Lint and fix on commit
 ? Pick a unit testing solution: Jest
@@ -75,34 +75,44 @@ vue add vuetify-storybook
 
 ## Commands
 
+### Install dependencies
+
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Compile app in development mode with hot-reloads
 
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Build and minify app for production
 
 ```
 npm run build
 ```
 
-### Run your unit tests
+### Run storybook in development mode
+
+```
+npm run serve:storybook
+```
+
+### Run unit tests
 
 ```
 npm run test:unit
 ```
 
-### Lints and fixes files
+### Run unit tests in watcher mode
+
+```
+npm run test:unit:watch
+```
+
+### Lint and fix files
 
 ```
 npm run lint
 ```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
