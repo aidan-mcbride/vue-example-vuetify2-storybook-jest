@@ -27,11 +27,11 @@ Recently(as of writing this), storybook has introduced a new **[Component Story 
 
 1. **Create project with [Vue CLI 3](https://cli.vuejs.org/):**
 
-```sh
+```
 vue create vue-example-vuetify2-storybook-jest
 ```
 
-```sh
+```
 ? Please pick a preset: Manually select features
 ? Check the features needed for your project: Babel, Vuex, CSS Pre-processors, Linter, Un
 it
@@ -44,15 +44,28 @@ t): Sass/SCSS (with dart-sass)
 ? Save this as a preset for future projects? No
 ```
 
-```sh
+```
 cd vue-example-vuetify2-storybook-jest
 ```
 
 2. **[Install Vuetify](https://vuetifyjs.com/en/getting-started/quick-start):**
 
-```sh
+```
 vue add vuetify
 ```
+
+```
+? Choose a preset: Configure (advanced)
+? Use a pre-made template? (will replace App.vue and HelloWorld.vue) Yes
+? Use custom theme? No
+? Use custom properties (CSS variables)? No
+? Select icon font Material Design Icons
+? Use fonts as a dependency (for Electron or offline)? Yes
+? Use a-la-carte components? Yes
+? Select locale English
+```
+
+These are the same options as if you had chosen the `Default (recommended)` preset, except that I chose to use fonts as a dependency out of personal preference. Feel free to choose `Default (recommended)` if you want.
 
 ## Commands
 
