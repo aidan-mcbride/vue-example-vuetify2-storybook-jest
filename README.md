@@ -67,6 +67,12 @@ vue add vuetify
 
 These are the same options as if you had chosen the `Default (recommended)` preset, except that I chose to use fonts as a dependency out of personal preference. Feel free to choose `Default (recommended)` if you want.
 
+3. **[Install Vuetify-storybook](https://github.com/vuetifyjs/vue-cli-plugins/tree/master/packages/vue-cli-plugin-vuetify-storybook):**
+
+```
+vue add vuetify-storybook
+```
+
 ## Commands
 
 ```
