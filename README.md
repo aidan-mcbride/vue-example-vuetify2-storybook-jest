@@ -73,46 +73,16 @@ These are the same options as if you had chosen the `Default (recommended)` pres
 vue add vuetify-storybook
 ```
 
-## Commands
+---
 
-### Install dependencies
+## Useful Commands
 
-```
-npm install
-```
-
-### Compile app in development mode with hot-reloads
-
-```
-npm run serve
-```
-
-### Build and minify app for production
-
-```
-npm run build
-```
-
-### Run storybook in development mode
-
-```
-npm run serve:storybook
-```
-
-### Run unit tests
-
-```
-npm run test:unit
-```
-
-### Run unit tests in watcher mode
-
-```
-npm run test:unit:watch
-```
-
-### Lint and fix files
-
-```
-npm run lint
-```
+| Command                   | Description                                 |
+| ------------------------- | ------------------------------------------- |
+| `npm install`             | Install project dependencies                |
+| `npm run serve`           | Compile app in development with hot-reloads |
+| `npm run build`           | Build and minify app for production         |
+| `npm run serve:storybook` | Run storybook                               |
+| `npm run test:unit`       | Run unit tests                              |
+| `npm run test:unit:watch` | Run unit tests in watcher mode              |
+| `npm run lint`            | Lint and fix all project files              |
