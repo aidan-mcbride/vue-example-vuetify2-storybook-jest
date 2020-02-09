@@ -25,6 +25,7 @@ Recently(as of writing this), storybook has introduced a new **[Component Story 
 
 - [Vue.js](https://vuejs.org/)`v2.x`
   - [Vuex](https://vuex.vuejs.org/)
+  - [Vue Test Utils](https://vue-test-utils.vuejs.org/)
 - [Vuetify](https://vuetifyjs.com/en/)`v2.2`
   - [vue-cli-plugin-vuetify-storybook](https://github.com/vuetifyjs/vue-cli-plugins/tree/master/packages/vue-cli-plugin-vuetify-storybook)
 - [Storybook.js](https://storybook.js.org/)`v5.3`
@@ -107,3 +108,15 @@ As of version 5.3, Storybook has a new _[declarative configuration](https://medi
 ## References
 
 ### Documentation
+
+- **[Vue CLI 3](https://cli.vuejs.org/)**
+- **[Vue.js](https://vuejs.org/v2/guide/)**
+- **[Vuex](https://vuex.vuejs.org/)**
+- **[Vuetify](https://vuetifyjs.com/en/getting-started/quick-start)**
+
+- **[Storybook.js](https://storybook.js.org/docs/basics/introduction/)**
+
+  - [Storybook for Vue tutorial](https://www.learnstorybook.com/intro-to-storybook/vue/en/get-started/)
+
+- **[Jest.js](https://jestjs.io/docs/en/getting-started.html)**
+- **[Vue Test Utils](https://vue-test-utils.vuejs.org/)**
