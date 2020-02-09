@@ -6,8 +6,8 @@
 
 > **🚨️IMPORTANT NOTE 1:🚨️**
 >
-> The raison d'être for this project is that - as of when this project is last updated - the [Vuetify storybook plugin](https://github.com/vuetifyjs/vue-cli-plugins/tree/master/packages/vue-cli-plugin-vuetify-storybook) does not use Storybook's new _[component story format](https://medium.com/storybookjs/component-story-format-66f4c32366df)_, which is the format used in all of Storybook's documentation and tutorials.
-> If, in the future, the Vuetify storybook plugin is updated to use the component story format(and you know how to unit test with vue and vuetify) then this project will become essentially obsolete.
+> The raison d'être for this project is that - as of when this project is last updated - the [Vuetify storybook plugin](https://github.com/vuetifyjs/vue-cli-plugins/tree/master/packages/vue-cli-plugin-vuetify-storybook) does not use Storybook's new _[component story format](https://medium.com/storybookjs/component-story-format-66f4c32366df)_ or _[declarative configuration file system](https://medium.com/storybookjs/declarative-storybook-configuration-49912f77b78)_, which are the formats used in all of Storybook's documentation and tutorials.
+> If, in the future, the Vuetify storybook plugin is updated to use the component story format and configuration style(and you already know how to unit test with vue and vuetify) then this project will become essentially obsolete.
 
 > **🚨️IMPORTANT NOTE 2🚨️**
 >
@@ -19,9 +19,16 @@
 
 This is a working example of a vue project that includes vuetify 2.2, storybook 5.3, and unit testing with jest - all working together.
 
-Recently(as of writing this), storybook has introduced a new **[Component Story Format](https://medium.com/storybookjs/component-story-format-66f4c32366df)** for creating stories. Vuetify has a [very nifty plugin](https://github.com/vuetifyjs/vue-cli-plugins/tree/master/packages/vue-cli-plugin-vuetify-storybook) for initializing a project with vuetify and storybook configured together, but it does not use this new CSF style.
+Recently(as of writing this), storybook has introduced a new **[Component Story Format](https://medium.com/storybookjs/component-story-format-66f4c32366df)** for creating stories, as well as a new [declarative style for configuration files](https://medium.com/storybookjs/declarative-storybook-configuration-49912f77b78). Vuetify has a [very nifty plugin](https://github.com/vuetifyjs/vue-cli-plugins/tree/master/packages/vue-cli-plugin-vuetify-storybook) for initializing a project with vuetify and storybook configured together, but it does not use this new CSF style, or the new configuration file style.
 
 ### Stack
+
+- [Vue.js](https://vuejs.org/)`v2.x`
+  - [Vuex](https://vuex.vuejs.org/)
+- [Vuetify](https://vuetifyjs.com/en/)`v2.2`
+  - [vue-cli-plugin-vuetify-storybook](https://github.com/vuetifyjs/vue-cli-plugins/tree/master/packages/vue-cli-plugin-vuetify-storybook)
+- [Storybook.js](https://storybook.js.org/)`v5.3`
+- [Jest.js](https://jestjs.io/)`v25.1`
 
 ---
 
@@ -73,6 +80,14 @@ These are the same options as if you had chosen the `Default (recommended)` pres
 vue add vuetify-storybook
 ```
 
+### Refactor [vuetify-storybook](https://github.com/vuetifyjs/vue-cli-plugins/tree/master/packages/vue-cli-plugin-vuetify-storybook)'s configuration
+
+As of version 5.3, Storybook has a new _[declarative configuration](https://medium.com/storybookjs/declarative-storybook-configuration-49912f77b78)_ style. To update your vuetify-storybook config to this new style, make the following changes:
+
+> TODO
+
+### Configure [Jest](https://jestjs.io/docs/en/configuration)
+
 ---
 
 ## Useful Commands
@@ -86,3 +101,9 @@ vue add vuetify-storybook
 | `npm run test:unit`       | Run unit tests                              |
 | `npm run test:unit:watch` | Run unit tests in watcher mode              |
 | `npm run lint`            | Lint and fix all project files              |
+
+---
+
+## References
+
+### Documentation
