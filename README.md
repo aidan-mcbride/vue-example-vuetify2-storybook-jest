@@ -89,6 +89,69 @@ As of version 5.3, Storybook has a new _[declarative configuration](https://medi
 
 ### Configure [Jest](https://jestjs.io/docs/en/configuration)
 
+**[Look for test files in `src/components/`](https://jestjs.io/docs/en/configuration#testmatch-arraystring)**
+
+To change the directory where Jest looks for tests, you can add a regex to the `testMatch` array:
+
+`jest.config.js`
+
+```JavaScript
+module.exports = {
+  preset: '@vue/cli-plugin-unit-jest',
+  testMatch: [
+    '**/tests/unit/**/*.spec.[jt]s?(x)',
+    '**/__tests__/*.[jt]s?(x)',
+    '**/src/**/*.spec.[jt]s?(x)'
+  ]
+};
+```
+
+The matching preset used by `@vue/cli-plugin-unit-jest` differs from the [jest default](https://jestjs.io/docs/en/configuration#testmatch-arraystring), and uses the following two patterns:
+
+- `**/tests/unit/**/*.spec.[jt]s?(x)` will match any file ending in `.spec.js`, `.spec.jsx`, `.spex.ts` or `.spec.tsx` in the `tests/unit/` directory.
+- `**/__tests__/*.[jt]s?(x)` will match any `.js`, `.ts`, `.jsx`, or `.tsx` file in the `__tests__/` directory
+
+I added my own pattern:
+
+- `**/src/**/*.spec.[jt]s?(x)` will match any file ending in `.spec.js`, `.spec.jsx`, `.spex.ts` or `.spec.tsx` in the `src/components/` directory.
+
+I want to place my test files in the same directory as their corresponding components and storybook stories, which keeps related files closer to each other and cuts down on the number of directories I need to have open in my tree:
+
+```
+.storybook/
+src/
+|-- components/
+| |-- MyComponent.vue         # component
+| |-- MyComponent.spec.js     # stories
+| |-- MyComponent.stories.js  # tests
+|-- plugins/
+|-- store/
+|-- ...
+|-- App.vue
+|-- main.js
+```
+
+vs.
+
+```
+.storybook/
+|--stories/
+| |--MyComponent.stories.js   # stories
+|--main.js
+|--preview.js
+src/
+|--components/
+| |--MyComponent.vue          # component
+|--plugins/
+|--store/
+|--App.vue
+|--main.js
+tests/
+|--unit/
+| |--components/
+| | |--MyComponent.spec.js    # tests
+```
+
 ---
 
 ## Useful Commands
@@ -120,3 +183,11 @@ As of version 5.3, Storybook has a new _[declarative configuration](https://medi
 
 - **[Jest.js](https://jestjs.io/docs/en/getting-started.html)**
 - **[Vue Test Utils](https://vue-test-utils.vuejs.org/)**
+
+```
+
+```
+
+```
+
+```
