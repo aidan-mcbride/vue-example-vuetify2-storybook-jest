@@ -113,7 +113,7 @@ The matching preset used by `@vue/cli-plugin-unit-jest` differs from the [jest d
 
 I added my own pattern:
 
-- `**/src/**/*.spec.[jt]s?(x)` will match any file ending in `.spec.js`, `.spec.jsx`, `.spex.ts` or `.spec.tsx` in the `src/components/` directory.
+- `**/src/components/**/*.spec.[jt]s?(x)` will match any file ending in `.spec.js`, `.spec.jsx`, `.spex.ts` or `.spec.tsx` in the `src/components/` directory.
 
 I want to place my test files in the same directory as their corresponding components and storybook stories, which keeps related files closer to each other and cuts down on the number of directories I need to have open in my tree:
 
