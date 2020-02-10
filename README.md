@@ -89,7 +89,7 @@ As of version 5.3, Storybook has a new _[declarative configuration](https://medi
 
 ### Configure [Jest](https://jestjs.io/docs/en/configuration)
 
-**[Look for test files in `src/components/`](https://jestjs.io/docs/en/configuration#testmatch-arraystring)**
+#### [Look for test files in `src/components/`](https://jestjs.io/docs/en/configuration#testmatch-arraystring)
 
 To change the directory where Jest looks for tests, you can add a regex to the `testMatch` array:
 
@@ -175,7 +175,7 @@ module.exports = {
 };
 ```
 
-**[Bootstrap vuetify for tests](https://vuetifyjs.com/en/getting-started/unit-testing#bootstrapping-vuetify)**
+#### [Bootstrap vuetify for tests](https://vuetifyjs.com/en/getting-started/unit-testing#bootstrapping-vuetify)
 
 Vuetify must be installed into the vue instance for testing; this is done globally in a `setup.js` file:
 
