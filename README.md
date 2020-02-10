@@ -33,7 +33,7 @@ Recently(as of writing this), storybook has introduced a new **[Component Story 
 
 ---
 
-## Project setup
+## Manual project setup
 
 1. **Create project with [Vue CLI 3](https://cli.vuejs.org/):**
 
@@ -83,9 +83,152 @@ vue add vuetify-storybook
 
 ### Refactor [vuetify-storybook](https://github.com/vuetifyjs/vue-cli-plugins/tree/master/packages/vue-cli-plugin-vuetify-storybook)'s configuration
 
-As of version 5.3, Storybook has a new _[declarative configuration](https://medium.com/storybookjs/declarative-storybook-configuration-49912f77b78)_ style. To update your vuetify-storybook config to this new style, make the following changes:
+As of version 5.3, Storybook has a new _[declarative configuration](https://medium.com/storybookjs/declarative-storybook-configuration-49912f77b78)_ style. This section walks you through converting the boilerplate vuetify-storybook configuration to this new style.
 
-> TODO
+#### Refactor config files
+
+> [**Storybook migrations docs**](https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#from-version-52x-to-53x)
+
+1. Create two files in the `.storybook/` directory: **`.storybook/main.js`** and **`.storybook/preview.js`**
+
+- **`main.js`** contains the bulk of Storybook's configuration, including **locations of story files**, **webpack config**, and **addon registration**.
+
+- **`preview.js`** controls how stories are rendered in storybook, and includes **global decorators**.
+
+2. In `main.js`: Set the `stories` array to point at the directory where you are putting your stories.
+
+Vuetify-storybook places stories in `.storybook/stories/`, which would look like this:
+
+```JavaScript
+// .storybook/main.js
+
+module.exports = {
+  stories: ['./stories'],
+}
+```
+
+I like to place my story files right next to their components, in the `src/components/` directory:
+
+```JavaScript
+// .storybook/main.js
+
+module.exports = {
+  stories: ['../src/components/**/*.stories.js'],
+}
+```
+
+3. Move the list of storybook addons from `.storybook/addons.js` to the `addons` array in `main.js`; remove the `/register` suffix from all of the addons.
+
+Take note of the first line in the array below, which is used to register the `addon-show-vue-markup` addon from its directory in `.storybook/`:
+
+```JavaScript
+// .storybook/main.js
+
+module.exports = {
+  stories: /* ... */,
+  addons: [
+    './.storybook/addon-show-vue-markup/register', // NOTE THIS LINE
+    '@storybook/addon-actions',
+    '@storybook/addon-links',
+    '@storybook/addon-knobs',
+    '@storybook/addon-notes',
+    '@storybook/addon-a11y',
+    '@storybook/addon-viewport'
+  ],
+}
+```
+
+After registering all used addons here, you can **delete `.storybook/addons.js`**
+
+4. Add vuetify-storybook's webpack config to `.storybook/main.js`:
+
+- add `const path = require('path');` to the top of the file.
+
+```JavaScript
+const path = require('path');
+
+module.exports = {
+  // ...
+}
+```
+
+- [add the `webpackFinal` property](https://storybook.js.org/docs/configurations/custom-webpack-config/#examples): Note that you cannot simply copy/paste the code from vuetify-storybook's `webpack.config.js`, as it's a little bit different(see the link).
+
+```JavaScript
+module.exports = {
+  // ...
+  webpackFinal: async (config, { configType }) => {
+    // ...
+  }
+};
+```
+
+- Add the path resolver from `webpack.config.js` to the webpack config in `main.js`
+
+```JavaScript
+config.resolve.alias['~storybook'] = path.resolve(__dirname);
+```
+
+- Add the SASS loader:
+
+```JavaScript
+config.module.rules.push({
+  test: /\.s(a|c)ss$/,
+  use: ['style-loader', 'css-loader', 'sass-loader'],
+  include: path.resolve(__dirname, '../')
+});
+```
+
+- Add the line `return config;` below the sass loader
+
+After setting up the webpack config in `main.js`, you can **delete `.storybook/webpack.config.js`**
+
+> **NOTE:**
+> In vuetify-storybook's webpack config there is a third section:
+>
+> ```JavaScript
+> config.module.rules.push({
+>   resourceQuery: /blockType=story/,
+>   loader: 'vue-storybook'
+> });
+> ```
+>
+> As far as I can tell, this block is no longer needed. It looks like it is a vue loader for storybook, but [Storybook's manual vue setup guide makes no mention of needing this](https://storybook.js.org/docs/guides/guide-vue/), and I haven't encountered any problems so far running storybook without this block. It looks like the dependency `@storybook/vue` may have replaced this.
+
+Your `main.js` should look close to this now:
+
+```JavaScript
+const path = require('path');
+
+module.exports = {
+  stories: ['../src/components/**/*.stories.js'],
+  addons: [
+    './.storybook/addon-show-vue-markup/register',
+    '@storybook/addon-actions',
+    '@storybook/addon-links',
+    '@storybook/addon-knobs',
+    '@storybook/addon-notes',
+    '@storybook/addon-a11y',
+    '@storybook/addon-viewport'
+  ],
+  webpackFinal: async (config, { configType }) => {
+    config.resolve.alias['~storybook'] = path.resolve(__dirname);
+
+    config.module.rules.push({
+      test: /\.s(a|c)ss$/,
+      use: ['style-loader', 'css-loader', 'sass-loader'],
+      include: path.resolve(__dirname, '../')
+    });
+
+    return config;
+  }
+};
+```
+
+5. copy the contents of `config.js` to `preview.js`
+   remove the import of `{ configure }` from `@storybook/vue`, though leave the import of `{ addDecorator }`.
+   Remove the final line that begins with `configure(require.context('./stories'`
+   then **delete `config.js`**
 
 ### Configure [Jest](https://jestjs.io/docs/en/configuration)
 
@@ -106,7 +249,7 @@ module.exports = {
 };
 ```
 
-The matching preset used by `@vue/cli-plugin-unit-jest` differs from the [jest default](https://jestjs.io/docs/en/configuration#testmatch-arraystring), and uses the following two patterns:
+The matching preset used by [`@vue/cli-plugin-unit-jest`](https://cli.vuejs.org/core-plugins/unit-jest.html) differs from the [jest default](https://jestjs.io/docs/en/configuration#testmatch-arraystring), and uses the following two patterns:
 
 - `**/tests/unit/**/*.spec.[jt]s?(x)` will match any file ending in `.spec.js`, `.spec.jsx`, `.spex.ts` or `.spec.tsx` in the `tests/unit/` directory.
 - `**/__tests__/*.[jt]s?(x)` will match any `.js`, `.ts`, `.jsx`, or `.tsx` file in the `__tests__/` directory
@@ -223,6 +366,9 @@ module.exports = {
 ### Documentation
 
 - **[Vue CLI 3](https://cli.vuejs.org/)**
+
+  -[@vue/cli-plugin-unit-jest](https://cli.vuejs.org/core-plugins/unit-jest.html)
+
 - **[Vue.js](https://vuejs.org/v2/guide/)**
 - **[Vuex](https://vuex.vuejs.org/)**
 - **[Vuetify](https://vuetifyjs.com/en/getting-started/quick-start)**
