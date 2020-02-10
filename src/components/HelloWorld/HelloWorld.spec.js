@@ -2,7 +2,7 @@
 import Vuetify from 'vuetify';
 
 // Components
-import HelloWorld from '@/components/HelloWorld.vue';
+import HelloWorld from './HelloWorld.vue';
 
 // Utilities
 import { shallowMount, createLocalVue } from '@vue/test-utils';

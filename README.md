@@ -175,11 +175,11 @@ module.exports = {
 };
 ```
 
-#### [Bootstrap vuetify for tests](https://vuetifyjs.com/en/getting-started/unit-testing#bootstrapping-vuetify)
+#### Bootstrap vuetify for tests
 
-Vuetify must be installed into the vue instance for testing; this is done globally in a `setup.js` file:
+[Vuetify must be installed globally in a setup file](https://vuetifyjs.com/en/getting-started/unit-testing#bootstrapping-vuetify):
 
-`setup.js`
+`jest.setup.js`
 
 ```JavaScript
 import Vue from 'vue'
