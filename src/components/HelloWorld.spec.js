@@ -1,4 +1,24 @@
-// import { shallowMount } from '@vue/test-utils';
-// import HelloWorld from '@/components/HelloWorld.vue';
-//
-// describe('HelloWorld.vue', () => {});
+// Libraries
+import Vuetify from 'vuetify';
+
+// Components
+import HelloWorld from '@/components/HelloWorld.vue';
+
+// Utilities
+import { shallowMount, createLocalVue } from '@vue/test-utils';
+
+const localVue = createLocalVue();
+
+describe('HelloWorld.vue', () => {
+  let vuetify;
+
+  beforeEach(() => {
+    vuetify = new Vuetify();
+  });
+
+  it('renders correct markup', () => {
+    const wrapper = shallowMount(HelloWorld, { localVue, vuetify });
+
+    expect(wrapper.html()).toMatchSnapshot();
+  });
+});

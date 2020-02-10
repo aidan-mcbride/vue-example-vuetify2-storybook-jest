@@ -152,6 +152,56 @@ tests/
 | | |--MyComponent.spec.js    # tests
 ```
 
+**IMPORTANT TO AVOID LINTER ERRORS:** you must add your `testMatch` path to your `overrides` in `.eslintrc.js`:
+
+`.eslintrc.js`
+
+```JavaScript
+module.exports = {
+  // ...
+  overrides: [
+    {
+      files: [
+        '**/__tests__/*.{j,t}s?(x)',
+        '**/tests/unit/**/*.spec.{j,t}s?(x)',
+        // ADD THIS:
+        '**/src/components/**/*.spec.{j,t}s?(x)'
+      ],
+      env: {
+        jest: true
+      }
+    }
+  ]
+};
+```
+
+**[Bootstrap vuetify for tests](https://vuetifyjs.com/en/getting-started/unit-testing#bootstrapping-vuetify)**
+
+Vuetify must be installed into the vue instance for testing; this is done globally in a `setup.js` file:
+
+`setup.js`
+
+```JavaScript
+import Vue from 'vue'
+import Vuetify from 'vuetify'
+
+Vue.use(Vuetify)
+```
+
+In your `jest.config.js` file you must [specify the location of your setup file](https://jestjs.io/docs/en/configuration.html#setupfilesafterenv-array):
+
+`jest.config.js`
+
+```JavaScript
+module.exports = {
+  preset: '@vue/cli-plugin-unit-jest',
+  // ...
+  setupFilesAfterEnv: ['./jest.setup.js']
+};
+```
+
+> **NOTE:** After doing this, you must still [use a `localVue` instance within your test cases](https://vuetifyjs.com/en/getting-started/unit-testing#spec-tests).
+
 ---
 
 ## Useful Commands
@@ -183,11 +233,3 @@ tests/
 
 - **[Jest.js](https://jestjs.io/docs/en/getting-started.html)**
 - **[Vue Test Utils](https://vue-test-utils.vuejs.org/)**
-
-```
-
-```
-
-```
-
-```
