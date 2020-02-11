@@ -108,17 +108,15 @@ vue add vuetify-storybook
 
 As of version 5.3, Storybook has a new _[declarative configuration](https://medium.com/storybookjs/declarative-storybook-configuration-49912f77b78)_ style. This section walks you through converting the boilerplate vuetify-storybook configuration to this new style.
 
-#### Refactor config files
-
 > [**Storybook migrations docs**](https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#from-version-52x-to-53x)
 
-##### 1. Create two files in the `.storybook/` directory: **`.storybook/main.js`** and **`.storybook/preview.js`**
+#### 1. Create two files in the `.storybook/` directory: **`.storybook/main.js`** and **`.storybook/preview.js`**
 
 - **`main.js`** contains the bulk of Storybook's configuration, including **locations of story files**, **webpack config**, and **addon registration**.
 
 - **`preview.js`** controls how stories are rendered in storybook, and includes **global decorators**.
 
-##### 2. In `main.js`: Set the `stories` array to point at the directory where you are putting your stories.
+#### 2. In `main.js`: Set the `stories` array to point at the directory where you are putting your stories.
 
 Vuetify-storybook places stories in `.storybook/stories/`, which would look like this:
 
@@ -140,7 +138,7 @@ module.exports = {
 }
 ```
 
-##### 3. Move the list of storybook addons from `.storybook/addons.js` to the `addons` array in `main.js`.
+#### 3. Move the list of storybook addons from `.storybook/addons.js` to the `addons` array in `main.js`.
 
 remove the `/register` suffix from all of the addons.
 
@@ -165,7 +163,7 @@ module.exports = {
 
 After registering all used addons here, you can **delete `.storybook/addons.js`**
 
-##### 4. Add vuetify-storybook's webpack config to `.storybook/main.js`:
+#### 4. Add vuetify-storybook's webpack config to `.storybook/main.js`:
 
 - add `const path = require('path');` to the top of the file.
 
@@ -256,13 +254,13 @@ module.exports = {
 };
 ```
 
-##### 5. copy the contents of `config.js` to `preview.js`
+#### 5. copy the contents of `config.js` to `preview.js`
 
 remove the import of `{ configure }` from `@storybook/vue`, though leave the import of `{ addDecorator }`.
 Remove the final line that begins with `configure(require.context('./stories'`
 then **delete `config.js`**
 
-#### Clean up `.storybook/` directory
+### Clean up `.storybook/` directory
 
 > TODO
 
@@ -270,7 +268,7 @@ then **delete `config.js`**
 
 #### [Look for test files in `src/components/`](https://jestjs.io/docs/en/configuration#testmatch-arraystring)
 
-To change the directory where Jest looks for tests, you can add a regex to the `testMatch` array:
+To change the directory where Jest looks for tests, you can add a regular expression to the `testMatch` array:
 
 ```JavaScript
 // jest.config.js
