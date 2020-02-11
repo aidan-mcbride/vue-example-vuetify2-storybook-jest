@@ -23,6 +23,7 @@ _(in no particular order)_
 - [ ] replace `addon-show-vue-markup` with [storysource addon](https://github.com/storybookjs/storybook/tree/master/addons/storysource)?
 - [ ] Add [storyshots](https://github.com/storybookjs/storybook/tree/master/addons/storyshots) for automatic snapshot testing.
 - [ ] Refactor using [vue component very best practices](https://github.com/pablohpsilva/vuejs-component-style-guide) and [functional components](https://vuejs.org/v2/guide/render-function.html#Functional-Components)?
+- [ ] add table-of-contents to this here `README`
 
 ---
 
@@ -111,13 +112,13 @@ As of version 5.3, Storybook has a new _[declarative configuration](https://medi
 
 > [**Storybook migrations docs**](https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#from-version-52x-to-53x)
 
-1. Create two files in the `.storybook/` directory: **`.storybook/main.js`** and **`.storybook/preview.js`**
+##### 1. Create two files in the `.storybook/` directory: **`.storybook/main.js`** and **`.storybook/preview.js`**
 
 - **`main.js`** contains the bulk of Storybook's configuration, including **locations of story files**, **webpack config**, and **addon registration**.
 
 - **`preview.js`** controls how stories are rendered in storybook, and includes **global decorators**.
 
-2. In `main.js`: Set the `stories` array to point at the directory where you are putting your stories.
+##### 2. In `main.js`: Set the `stories` array to point at the directory where you are putting your stories.
 
 Vuetify-storybook places stories in `.storybook/stories/`, which would look like this:
 
@@ -139,7 +140,9 @@ module.exports = {
 }
 ```
 
-3. Move the list of storybook addons from `.storybook/addons.js` to the `addons` array in `main.js`; remove the `/register` suffix from all of the addons.
+##### 3. Move the list of storybook addons from `.storybook/addons.js` to the `addons` array in `main.js`.
+
+remove the `/register` suffix from all of the addons.
 
 Take note of the first line in the array below, which is used to register the `addon-show-vue-markup` addon from its directory in `.storybook/`:
 
@@ -162,11 +165,13 @@ module.exports = {
 
 After registering all used addons here, you can **delete `.storybook/addons.js`**
 
-4. Add vuetify-storybook's webpack config to `.storybook/main.js`:
+##### 4. Add vuetify-storybook's webpack config to `.storybook/main.js`:
 
 - add `const path = require('path');` to the top of the file.
 
 ```JavaScript
+// .storybook/main.js
+
 const path = require('path');
 
 module.exports = {
@@ -177,6 +182,8 @@ module.exports = {
 - [add the `webpackFinal` property](https://storybook.js.org/docs/configurations/custom-webpack-config/#examples): Note that you cannot simply copy/paste the code from vuetify-storybook's `webpack.config.js`, as it's a little bit different(see the link).
 
 ```JavaScript
+// .storybook/main.js
+
 module.exports = {
   // ...
   webpackFinal: async (config, { configType }) => {
@@ -220,6 +227,8 @@ After setting up the webpack config in `main.js`, you can **delete `.storybook/w
 Your `main.js` should look close to this now:
 
 ```JavaScript
+// .storybook/main.js
+
 const path = require('path');
 
 module.exports = {
@@ -247,10 +256,15 @@ module.exports = {
 };
 ```
 
-5. copy the contents of `config.js` to `preview.js`
-   remove the import of `{ configure }` from `@storybook/vue`, though leave the import of `{ addDecorator }`.
-   Remove the final line that begins with `configure(require.context('./stories'`
-   then **delete `config.js`**
+##### 5. copy the contents of `config.js` to `preview.js`
+
+remove the import of `{ configure }` from `@storybook/vue`, though leave the import of `{ addDecorator }`.
+Remove the final line that begins with `configure(require.context('./stories'`
+then **delete `config.js`**
+
+#### Clean up `.storybook/` directory
+
+> TODO
 
 ### Configure [Jest](https://jestjs.io/docs/en/configuration)
 
@@ -258,9 +272,9 @@ module.exports = {
 
 To change the directory where Jest looks for tests, you can add a regex to the `testMatch` array:
 
-`jest.config.js`
-
 ```JavaScript
+// jest.config.js
+
 module.exports = {
   preset: '@vue/cli-plugin-unit-jest',
   testMatch: [
@@ -319,9 +333,9 @@ tests/
 
 **IMPORTANT TO AVOID LINTER ERRORS:** you must add your `testMatch` path to your `overrides` in `.eslintrc.js`:
 
-`.eslintrc.js`
-
 ```JavaScript
+// .eslintrc.js
+
 module.exports = {
   // ...
   overrides: [
@@ -344,9 +358,9 @@ module.exports = {
 
 [Vuetify must be installed globally in a setup file](https://vuetifyjs.com/en/getting-started/unit-testing#bootstrapping-vuetify):
 
-`jest.setup.js`
-
 ```JavaScript
+// jest.setup.js
+
 import Vue from 'vue'
 import Vuetify from 'vuetify'
 
@@ -355,9 +369,9 @@ Vue.use(Vuetify)
 
 In your `jest.config.js` file you must [specify the location of your setup file](https://jestjs.io/docs/en/configuration.html#setupfilesafterenv-array):
 
-`jest.config.js`
-
 ```JavaScript
+// jest.config.js
+
 module.exports = {
   preset: '@vue/cli-plugin-unit-jest',
   // ...
