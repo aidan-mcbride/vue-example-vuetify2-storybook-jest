@@ -16,8 +16,8 @@ Not to create the end-all-be-all example app
 _(in no particular order)_
 
 - [ ] **[Add example app from storybook tutorial, but with vuetify and unit tests](https://www.learnstorybook.com/intro-to-storybook/vue/en/get-started/)**
-- [ ] Remove `.storybook/stories`
-- [ ] Remove useless(?) vuetify-storybook utils
+- [x] Remove `.storybook/stories`
+- [x] Remove useless(?) vuetify-storybook utils
 - [ ] Refactor so that both app and storybook use the same vuetify config(`./src/plugins/vuetify.js`) - perhaps by refactoring `addon-vuetify/`
 - [ ] Refactor component sub-directories to use `index.js` files to export components, so that you don't have to import them as `import MyComponent from '@/components/MyComponent/MyComponent'`
 - [ ] replace `addon-show-vue-markup` with [storysource addon](https://github.com/storybookjs/storybook/tree/master/addons/storysource)?
@@ -262,7 +262,19 @@ then **delete `config.js`**
 
 ### Clean up `.storybook/` directory
 
-> TODO
+1. Delete `.storybook/stories/` if you are putting your stories somewhere else, like in your components directory.
+
+2. In the `.storybook/util/` directory is a file named `helpers.js`, which contains a function called `storyFactory`. The [vuetify-storybook documentation](https://github.com/vuetifyjs/vue-cli-plugins/tree/master/packages/vue-cli-plugin-vuetify-storybook) says that this is 'a helper function to facilitate the generation of stories'. I don't know what this means, and - after experimenting with it - I haven't seen that it does anything. My hunch is that storybook's new **[Component Story Format](https://storybook.js.org/docs/formats/component-story-format/)** makes this helper function obsolete. I chose to delete the entire `.storybook/util/` directory and everything in it.
+
+Your `.storybook/` directory should now look something like this:
+
+```
+.storybook/
+|--addon-show-vue-markup/
+|--addon-vuetify/
+|--main.js
+|--preview.js
+```
 
 ### Configure [Jest](https://jestjs.io/docs/en/configuration)
 
