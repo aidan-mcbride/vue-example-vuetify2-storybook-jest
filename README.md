@@ -4,6 +4,28 @@
 
 ---
 
+## Roadmap/To-Do list
+
+<!--
+NOTE TO SELF:
+Remember scope of this project:
+Just to create a working example of Vuetify + Storybook + Jest TDD
+Not to create the end-all-be-all example app
+-->
+
+_(in no particular order)_
+
+- [ ] **[Add example app from storybook tutorial, but with vuetify and unit tests](https://www.learnstorybook.com/intro-to-storybook/vue/en/get-started/)**
+- [ ] Remove `.storybook/stories`
+- [ ] Remove useless(?) vuetify-storybook utils
+- [ ] Refactor so that both app and storybook use the same vuetify config(`./src/plugins/vuetify.js`) - perhaps by refactoring `addon-vuetify/`
+- [ ] Refactor component sub-directories to use `index.js` files to export components, so that you don't have to import them as `import MyComponent from '@/components/MyComponent/MyComponent'`
+- [ ] replace `addon-show-vue-markup` with [storysource addon](https://github.com/storybookjs/storybook/tree/master/addons/storysource)?
+- [ ] Add [storyshots](https://github.com/storybookjs/storybook/tree/master/addons/storyshots) for automatic snapshot testing.
+- [ ] Refactor using [vue component very best practices](https://github.com/pablohpsilva/vuejs-component-style-guide) and [functional components](https://vuejs.org/v2/guide/render-function.html#Functional-Components)?
+
+---
+
 > **🚨️IMPORTANT NOTE 1:🚨️**
 >
 > The raison d'être for this project is that - as of when this project is last updated - the [Vuetify storybook plugin](https://github.com/vuetifyjs/vue-cli-plugins/tree/master/packages/vue-cli-plugin-vuetify-storybook) does not use Storybook's new _[component story format](https://medium.com/storybookjs/component-story-format-66f4c32366df)_ or _[declarative configuration file system](https://medium.com/storybookjs/declarative-storybook-configuration-49912f77b78)_, which are the formats used in all of Storybook's documentation and tutorials.
