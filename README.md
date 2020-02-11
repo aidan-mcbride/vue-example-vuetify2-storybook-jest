@@ -24,6 +24,7 @@ _(in no particular order)_
 - [ ] Add [storyshots](https://github.com/storybookjs/storybook/tree/master/addons/storyshots) for automatic snapshot testing.
 - [ ] Refactor using [vue component very best practices](https://github.com/pablohpsilva/vuejs-component-style-guide) and [functional components](https://vuejs.org/v2/guide/render-function.html#Functional-Components)?
 - [ ] add table-of-contents to this here `README`
+- [ ] DRY unit tests by abstracting wrapper setup, etc.
 
 ---
 
