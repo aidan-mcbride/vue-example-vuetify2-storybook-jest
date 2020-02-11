@@ -45,6 +45,8 @@ This is a working example of a vue project that includes vuetify 2.2, storybook 
 
 Recently(as of writing this), storybook has introduced a new **[Component Story Format](https://medium.com/storybookjs/component-story-format-66f4c32366df)** for creating stories, as well as a new [declarative style for configuration files](https://medium.com/storybookjs/declarative-storybook-configuration-49912f77b78). Vuetify has a [very nifty plugin](https://github.com/vuetifyjs/vue-cli-plugins/tree/master/packages/vue-cli-plugin-vuetify-storybook) for initializing a project with vuetify and storybook configured together, but it does not use this new CSF style, or the new configuration file style.
 
+This project also shows an example of the [Storybook tutorial app](https://www.learnstorybook.com/intro-to-storybook/vue/en/get-started/), but built using vuetify, and with unit tests.
+
 ### Stack
 
 - [Vue.js](https://vuejs.org/)`v2.x`
