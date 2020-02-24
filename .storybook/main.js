@@ -14,6 +14,8 @@ module.exports = {
   webpackFinal: async (config, { configType }) => {
     config.resolve.alias['~storybook'] = path.resolve(__dirname);
 
+    config.resolve.alias['@'] = path.resolve('src/');
+
     config.module.rules.push({
       test: /\.s(a|c)ss$/,
       use: ['style-loader', 'css-loader', 'sass-loader'],
