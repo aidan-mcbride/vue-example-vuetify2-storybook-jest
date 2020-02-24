@@ -59,6 +59,20 @@ This project also shows an example of the [Storybook tutorial app](https://www.l
 
 ---
 
+## Useful Commands
+
+| Command                   | Description                                 |
+| ------------------------- | ------------------------------------------- |
+| `npm install`             | Install project dependencies                |
+| `npm run serve`           | Compile app in development with hot-reloads |
+| `npm run build`           | Build and minify app for production         |
+| `npm run serve:storybook` | Run storybook                               |
+| `npm run test:unit`       | Run unit tests                              |
+| `npm run test:unit:watch` | Run unit tests in watcher mode              |
+| `npm run lint`            | Lint and fix all project files              |
+
+---
+
 ## Manual project setup
 
 1. **Create project with [Vue CLI 3](https://cli.vuejs.org/):**
@@ -393,20 +407,6 @@ module.exports = {
 ```
 
 > **NOTE:** After doing this, you must still [use a `localVue` instance within your test cases](https://vuetifyjs.com/en/getting-started/unit-testing#spec-tests).
-
----
-
-## Useful Commands
-
-| Command                   | Description                                 |
-| ------------------------- | ------------------------------------------- |
-| `npm install`             | Install project dependencies                |
-| `npm run serve`           | Compile app in development with hot-reloads |
-| `npm run build`           | Build and minify app for production         |
-| `npm run serve:storybook` | Run storybook                               |
-| `npm run test:unit`       | Run unit tests                              |
-| `npm run test:unit:watch` | Run unit tests in watcher mode              |
-| `npm run lint`            | Lint and fix all project files              |
 
 ---
 
