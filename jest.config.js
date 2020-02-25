@@ -5,5 +5,8 @@ module.exports = {
     '**/__tests__/*.[jt]s?(x)',
     '**/src/components/**/*.spec.[jt]s?(x)'
   ],
-  setupFilesAfterEnv: ['./jest.setup.js']
+  setupFilesAfterEnv: ['./jest.setup.js'],
+  moduleNameMapper: {
+    '^@components(.*)$': '<rootDir>/src/components$1'
+  }
 };
