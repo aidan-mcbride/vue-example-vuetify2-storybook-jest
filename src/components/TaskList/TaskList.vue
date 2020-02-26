@@ -1,11 +1,9 @@
 <template>
-  <div>
-    <pure-task-list
-      :tasks="tasks"
-      @archiveTask="archiveTask"
-      @pinTask="pinTask"
-    />
-  </div>
+  <pure-task-list
+    :tasks="tasks"
+    @archiveTask="archiveTask"
+    @pinTask="pinTask"
+  />
 </template>
 
 <script>
@@ -17,13 +15,11 @@ export default {
   components: {
     PureTaskList
   },
-  methods: {
-    ...mapActions(['archiveTask', 'pinTask'])
-  },
   computed: {
     ...mapState(['tasks'])
+  },
+  methods: {
+    ...mapActions(['archiveTask', 'pinTask'])
   }
 };
 </script>
-
-<style lang="scss" scoped></style>

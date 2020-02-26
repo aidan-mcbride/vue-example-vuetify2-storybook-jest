@@ -8,7 +8,7 @@
       />
     </v-list>
 
-    <v-alert v-if="noTasks && !this.loading" type="success" prominent>
+    <v-alert v-if="noTasks && !loading" type="success" prominent>
       <div class="title">You have no tasks</div>
       <div>Sit back and relax</div>
     </v-alert>
@@ -58,5 +58,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss" scoped></style>
