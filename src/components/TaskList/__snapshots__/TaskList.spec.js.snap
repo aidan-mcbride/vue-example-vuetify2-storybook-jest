@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TaskList Default State renders correct markup 1`] = `
+exports[`PureTaskList Default State renders correct markup 1`] = `
 <div>
   <!---->
   <!---->
@@ -51,7 +51,7 @@ exports[`TaskList Default State renders correct markup 1`] = `
 </div>
 `;
 
-exports[`TaskList Empty State renders correct markup 1`] = `
+exports[`PureTaskList Empty State renders correct markup 1`] = `
 <div>
   <!---->
   <div role="alert" class="v-alert v-sheet theme--dark v-alert--prominent success">
@@ -66,7 +66,7 @@ exports[`TaskList Empty State renders correct markup 1`] = `
 </div>
 `;
 
-exports[`TaskList Loading State renders correct markup 1`] = `
+exports[`PureTaskList Loading State renders correct markup 1`] = `
 <div>
   <div role="list" class="v-list v-sheet v-sheet--tile theme--light">
     <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader v-skeleton-loader--is-loading theme--light">
@@ -105,7 +105,7 @@ exports[`TaskList Loading State renders correct markup 1`] = `
 </div>
 `;
 
-exports[`TaskList With Pinned Tasks renders correct markup 1`] = `
+exports[`PureTaskList With Pinned Tasks renders correct markup 1`] = `
 <div>
   <!---->
   <!---->
