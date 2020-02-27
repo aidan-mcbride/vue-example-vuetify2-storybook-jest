@@ -7,27 +7,29 @@ import { mount } from '@vue/test-utils';
 import { defaultTasksData, withPinnedTasksData } from './testData';
 
 describe('PureTaskList', () => {
+  const build = propsData => {
+    const wrapper = mount(PureTaskList, { propsData });
+
+    return {
+      wrapper
+    };
+  };
+
   describe('Default State', () => {
     it('renders correct markup', () => {
-      const wrapper = mount(PureTaskList, {
-        propsData: { tasks: defaultTasksData }
-      });
+      const { wrapper } = build({ tasks: defaultTasksData });
       expect(wrapper.html()).toMatchSnapshot();
     });
   });
 
   describe('With Pinned Tasks', () => {
     it('renders correct markup', () => {
-      const wrapper = mount(PureTaskList, {
-        propsData: { tasks: withPinnedTasksData }
-      });
+      const { wrapper } = build({ tasks: withPinnedTasksData });
       expect(wrapper.html()).toMatchSnapshot();
     });
 
     it('renders pinned tasks at the start of the list', () => {
-      const wrapper = mount(PureTaskList, {
-        propsData: { tasks: withPinnedTasksData }
-      });
+      const { wrapper } = build({ tasks: withPinnedTasksData });
       const firstTaskPinned = wrapper.find(Task);
 
       expect(firstTaskPinned.props().task.state).toBe('TASK_PINNED');
@@ -36,16 +38,14 @@ describe('PureTaskList', () => {
 
   describe('Loading State', () => {
     it('renders correct markup', () => {
-      const wrapper = mount(PureTaskList, {
-        propsData: { loading: true }
-      });
+      const { wrapper } = build({ loading: true });
       expect(wrapper.html()).toMatchSnapshot();
     });
   });
 
   describe('Empty State', () => {
     it('renders correct markup', () => {
-      const wrapper = mount(PureTaskList);
+      const { wrapper } = build();
       expect(wrapper.html()).toMatchSnapshot();
     });
   });
