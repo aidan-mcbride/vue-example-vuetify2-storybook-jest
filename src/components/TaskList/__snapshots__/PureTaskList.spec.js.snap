@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PureTaskList Default State renders correct markup 1`] = `
+<div>
+  <!---->
+  <!---->
+  <div role="list" class="v-list v-sheet v-sheet--tile theme--light">
+    <div tabindex="-1" role="listitem" class="v-list-item theme--light">
+      <div class="v-list-item__action"><button type="button" class="task__archive-button v-btn v-btn--flat v-btn--icon v-btn--round v-btn--text theme--light v-size--default" aria-label="archive task"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i></span></button></div>
+      <div class="v-list-item__content">
+        <div class="v-list-item__title">Task 1</div>
+      </div>
+      <div class="v-list-item__action"><button type="button" class="task__pin-button v-btn v-btn--flat v-btn--icon v-btn--round v-btn--text theme--light v-size--default" aria-label="pin task"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-star-outline theme--light"></i></span></button></div>
+    </div>
+    <div tabindex="-1" role="listitem" class="v-list-item theme--light">
+      <div class="v-list-item__action"><button type="button" class="task__archive-button v-btn v-btn--flat v-btn--icon v-btn--round v-btn--text theme--light v-size--default" aria-label="archive task"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i></span></button></div>
+      <div class="v-list-item__content">
+        <div class="v-list-item__title">Task 2</div>
+      </div>
+      <div class="v-list-item__action"><button type="button" class="task__pin-button v-btn v-btn--flat v-btn--icon v-btn--round v-btn--text theme--light v-size--default" aria-label="pin task"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-star-outline theme--light"></i></span></button></div>
+    </div>
+    <div tabindex="-1" role="listitem" class="v-list-item theme--light">
+      <div class="v-list-item__action"><button type="button" class="task__archive-button v-btn v-btn--flat v-btn--icon v-btn--round v-btn--text theme--light v-size--default" aria-label="archive task"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i></span></button></div>
+      <div class="v-list-item__content">
+        <div class="v-list-item__title">Task 3</div>
+      </div>
+      <div class="v-list-item__action"><button type="button" class="task__pin-button v-btn v-btn--flat v-btn--icon v-btn--round v-btn--text theme--light v-size--default" aria-label="pin task"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-star-outline theme--light"></i></span></button></div>
+    </div>
+    <div tabindex="-1" role="listitem" class="v-list-item theme--light">
+      <div class="v-list-item__action"><button type="button" class="task__archive-button v-btn v-btn--flat v-btn--icon v-btn--round v-btn--text theme--light v-size--default" aria-label="archive task"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i></span></button></div>
+      <div class="v-list-item__content">
+        <div class="v-list-item__title">Task 4</div>
+      </div>
+      <div class="v-list-item__action"><button type="button" class="task__pin-button v-btn v-btn--flat v-btn--icon v-btn--round v-btn--text theme--light v-size--default" aria-label="pin task"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-star-outline theme--light"></i></span></button></div>
+    </div>
+    <div tabindex="-1" role="listitem" class="v-list-item theme--light">
+      <div class="v-list-item__action"><button type="button" class="task__archive-button v-btn v-btn--flat v-btn--icon v-btn--round v-btn--text theme--light v-size--default" aria-label="archive task"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i></span></button></div>
+      <div class="v-list-item__content">
+        <div class="v-list-item__title">Task 5</div>
+      </div>
+      <div class="v-list-item__action"><button type="button" class="task__pin-button v-btn v-btn--flat v-btn--icon v-btn--round v-btn--text theme--light v-size--default" aria-label="pin task"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-star-outline theme--light"></i></span></button></div>
+    </div>
+    <div tabindex="-1" role="listitem" class="v-list-item theme--light">
+      <div class="v-list-item__action"><button type="button" class="task__archive-button v-btn v-btn--flat v-btn--icon v-btn--round v-btn--text theme--light v-size--default" aria-label="archive task"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i></span></button></div>
+      <div class="v-list-item__content">
+        <div class="v-list-item__title">Task 6</div>
+      </div>
+      <div class="v-list-item__action"><button type="button" class="task__pin-button v-btn v-btn--flat v-btn--icon v-btn--round v-btn--text theme--light v-size--default" aria-label="pin task"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-star-outline theme--light"></i></span></button></div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PureTaskList Empty State renders correct markup 1`] = `
+<div>
+  <!---->
+  <div role="alert" class="v-alert v-sheet theme--dark v-alert--prominent success">
+    <div class="v-alert__wrapper"><i aria-hidden="true" class="v-icon notranslate v-alert__icon material-icons theme--dark">$success</i>
+      <div class="v-alert__content">
+        <div class="title">You have no tasks</div>
+        <div>Sit back and relax</div>
+      </div>
+    </div>
+  </div>
+  <!---->
+</div>
+`;
+
+exports[`PureTaskList Loading State renders correct markup 1`] = `
+<div>
+  <div role="list" class="v-list v-sheet v-sheet--tile theme--light">
+    <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader v-skeleton-loader--is-loading theme--light">
+      <div class="v-skeleton-loader__list-item-avatar v-skeleton-loader__bone">
+        <div class="v-skeleton-loader__avatar v-skeleton-loader__bone"></div>
+        <div class="v-skeleton-loader__text v-skeleton-loader__bone"></div>
+      </div>
+    </div>
+    <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader v-skeleton-loader--is-loading theme--light">
+      <div class="v-skeleton-loader__list-item-avatar v-skeleton-loader__bone">
+        <div class="v-skeleton-loader__avatar v-skeleton-loader__bone"></div>
+        <div class="v-skeleton-loader__text v-skeleton-loader__bone"></div>
+      </div>
+    </div>
+    <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader v-skeleton-loader--is-loading theme--light">
+      <div class="v-skeleton-loader__list-item-avatar v-skeleton-loader__bone">
+        <div class="v-skeleton-loader__avatar v-skeleton-loader__bone"></div>
+        <div class="v-skeleton-loader__text v-skeleton-loader__bone"></div>
+      </div>
+    </div>
+    <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader v-skeleton-loader--is-loading theme--light">
+      <div class="v-skeleton-loader__list-item-avatar v-skeleton-loader__bone">
+        <div class="v-skeleton-loader__avatar v-skeleton-loader__bone"></div>
+        <div class="v-skeleton-loader__text v-skeleton-loader__bone"></div>
+      </div>
+    </div>
+    <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader v-skeleton-loader--is-loading theme--light">
+      <div class="v-skeleton-loader__list-item-avatar v-skeleton-loader__bone">
+        <div class="v-skeleton-loader__avatar v-skeleton-loader__bone"></div>
+        <div class="v-skeleton-loader__text v-skeleton-loader__bone"></div>
+      </div>
+    </div>
+  </div>
+  <!---->
+  <!---->
+</div>
+`;
+
+exports[`PureTaskList With Pinned Tasks renders correct markup 1`] = `
+<div>
+  <!---->
+  <!---->
+  <div role="list" class="v-list v-sheet v-sheet--tile theme--light">
+    <div tabindex="-1" role="listitem" class="v-list-item theme--light">
+      <div class="v-list-item__action"><button type="button" class="task__archive-button v-btn v-btn--flat v-btn--icon v-btn--round v-btn--text theme--light v-size--default" aria-label="archive task"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i></span></button></div>
+      <div class="v-list-item__content">
+        <div class="v-list-item__title">Task 6 (pinned)</div>
+      </div>
+      <div class="v-list-item__action"><button type="button" class="task__pin-button v-btn v-btn--flat v-btn--icon v-btn--round v-btn--text theme--light v-size--default" aria-label="pin task"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-star theme--light blue--text"></i></span></button></div>
+    </div>
+    <div tabindex="-1" role="listitem" class="v-list-item theme--light">
+      <div class="v-list-item__action"><button type="button" class="task__archive-button v-btn v-btn--flat v-btn--icon v-btn--round v-btn--text theme--light v-size--default" aria-label="archive task"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i></span></button></div>
+      <div class="v-list-item__content">
+        <div class="v-list-item__title">Task 1</div>
+      </div>
+      <div class="v-list-item__action"><button type="button" class="task__pin-button v-btn v-btn--flat v-btn--icon v-btn--round v-btn--text theme--light v-size--default" aria-label="pin task"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-star-outline theme--light"></i></span></button></div>
+    </div>
+    <div tabindex="-1" role="listitem" class="v-list-item theme--light">
+      <div class="v-list-item__action"><button type="button" class="task__archive-button v-btn v-btn--flat v-btn--icon v-btn--round v-btn--text theme--light v-size--default" aria-label="archive task"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i></span></button></div>
+      <div class="v-list-item__content">
+        <div class="v-list-item__title">Task 2</div>
+      </div>
+      <div class="v-list-item__action"><button type="button" class="task__pin-button v-btn v-btn--flat v-btn--icon v-btn--round v-btn--text theme--light v-size--default" aria-label="pin task"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-star-outline theme--light"></i></span></button></div>
+    </div>
+    <div tabindex="-1" role="listitem" class="v-list-item theme--light">
+      <div class="v-list-item__action"><button type="button" class="task__archive-button v-btn v-btn--flat v-btn--icon v-btn--round v-btn--text theme--light v-size--default" aria-label="archive task"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i></span></button></div>
+      <div class="v-list-item__content">
+        <div class="v-list-item__title">Task 3</div>
+      </div>
+      <div class="v-list-item__action"><button type="button" class="task__pin-button v-btn v-btn--flat v-btn--icon v-btn--round v-btn--text theme--light v-size--default" aria-label="pin task"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-star-outline theme--light"></i></span></button></div>
+    </div>
+    <div tabindex="-1" role="listitem" class="v-list-item theme--light">
+      <div class="v-list-item__action"><button type="button" class="task__archive-button v-btn v-btn--flat v-btn--icon v-btn--round v-btn--text theme--light v-size--default" aria-label="archive task"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i></span></button></div>
+      <div class="v-list-item__content">
+        <div class="v-list-item__title">Task 4</div>
+      </div>
+      <div class="v-list-item__action"><button type="button" class="task__pin-button v-btn v-btn--flat v-btn--icon v-btn--round v-btn--text theme--light v-size--default" aria-label="pin task"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-star-outline theme--light"></i></span></button></div>
+    </div>
+    <div tabindex="-1" role="listitem" class="v-list-item theme--light">
+      <div class="v-list-item__action"><button type="button" class="task__archive-button v-btn v-btn--flat v-btn--icon v-btn--round v-btn--text theme--light v-size--default" aria-label="archive task"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i></span></button></div>
+      <div class="v-list-item__content">
+        <div class="v-list-item__title">Task 5</div>
+      </div>
+      <div class="v-list-item__action"><button type="button" class="task__pin-button v-btn v-btn--flat v-btn--icon v-btn--round v-btn--text theme--light v-size--default" aria-label="pin task"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-star-outline theme--light"></i></span></button></div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,52 +1,33 @@
+import Vuex from 'vuex';
+
 // Components
-import PureTaskList from './PureTaskList';
+import TaskList from './TaskList';
 import Task from '@/components/Task/Task';
 
 // Utilities
-import { mount } from '@vue/test-utils';
-import { defaultTasksData, withPinnedTasksData } from './testData';
+import { mount, createLocalVue } from '@vue/test-utils';
+import { defaultTasksData } from './testData';
 
-describe('PureTaskList', () => {
-  describe('Default State', () => {
-    it('renders correct markup', () => {
-      const wrapper = mount(PureTaskList, {
-        propsData: { tasks: defaultTasksData }
-      });
-      expect(wrapper.html()).toMatchSnapshot();
+const localVue = createLocalVue();
+localVue.use(Vuex);
+
+const store = new Vuex.Store({
+  state: {
+    tasks: [...defaultTasksData]
+  }
+});
+
+describe('TaskList', () => {
+  it('Renders task from store', () => {
+    // arrange
+    const wrapper = mount(TaskList, {
+      store,
+      localVue
     });
-  });
-
-  describe('With Pinned Tasks', () => {
-    it('renders correct markup', () => {
-      const wrapper = mount(PureTaskList, {
-        propsData: { tasks: withPinnedTasksData }
-      });
-      expect(wrapper.html()).toMatchSnapshot();
-    });
-
-    it('renders pinned tasks at the start of the list', () => {
-      const wrapper = mount(PureTaskList, {
-        propsData: { tasks: withPinnedTasksData }
-      });
-      const firstTaskPinned = wrapper.find(Task);
-
-      expect(firstTaskPinned.props().task.state).toBe('TASK_PINNED');
-    });
-  });
-
-  describe('Loading State', () => {
-    it('renders correct markup', () => {
-      const wrapper = mount(PureTaskList, {
-        propsData: { loading: true }
-      });
-      expect(wrapper.html()).toMatchSnapshot();
-    });
-  });
-
-  describe('Empty State', () => {
-    it('renders correct markup', () => {
-      const wrapper = mount(PureTaskList);
-      expect(wrapper.html()).toMatchSnapshot();
-    });
+    const task = wrapper.find(Task);
+    const firstTaskTitle = defaultTasksData[0].title;
+    // assert
+    expect(wrapper.html()).toMatchSnapshot();
+    expect(task.text()).toContain(firstTaskTitle);
   });
 });
