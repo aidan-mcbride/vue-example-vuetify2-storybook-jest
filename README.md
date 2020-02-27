@@ -19,7 +19,7 @@ _(in no particular order)_
 - [x] Remove `.storybook/stories`
 - [x] Remove useless(?) vuetify-storybook utils
 - [ ] Refactor so that both app and storybook use the same vuetify config(`./src/plugins/vuetify.js`) - perhaps by refactoring `addon-vuetify/`
-- [ ] Refactor component sub-directories to use `index.js` files to export components, so that you don't have to import them as `import MyComponent from '@/components/MyComponent/MyComponent'`
+- [x] Refactor component sub-directories to use `index.js` files to export components, so that you don't have to import them as `import MyComponent from '@/components/MyComponent/MyComponent'`
 - [ ] replace `addon-show-vue-markup` with [storysource addon](https://github.com/storybookjs/storybook/tree/master/addons/storysource)?
 - [ ] Add [storyshots](https://github.com/storybookjs/storybook/tree/master/addons/storyshots) for automatic snapshot testing.
 - [ ] Refactor using [vue component very best practices](https://github.com/pablohpsilva/vuejs-component-style-guide) and [functional components](https://vuejs.org/v2/guide/render-function.html#Functional-Components)?
