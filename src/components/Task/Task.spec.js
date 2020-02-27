@@ -8,24 +8,26 @@ import { mount } from '@vue/test-utils';
 import { taskData } from './testData';
 
 describe('Task', () => {
+  const build = propsData => {
+    const wrapper = mount(Task, { propsData });
+
+    return {
+      wrapper,
+      title: wrapper.find('.v-list-item__title'),
+      archiveButton: wrapper.find('.task__archive-button'),
+      pinButton: wrapper.find('.task__pin-button')
+    };
+  };
+
   describe('Default State', () => {
     it('renders correct markup', () => {
-      const wrapper = mount(Task, {
-        propsData: {
-          task: taskData
-        }
-      });
+      const { wrapper } = build({ task: taskData });
       expect(wrapper.html()).toMatchSnapshot();
     });
 
     it('renders bound task title', () => {
       // arrange
-      const wrapper = mount(Task, {
-        propsData: {
-          task: taskData
-        }
-      });
-      const title = wrapper.find('.v-list-item__title');
+      const { title } = build({ task: taskData });
 
       // assert
       expect(title.text()).toBe(taskData.title);
@@ -33,8 +35,7 @@ describe('Task', () => {
 
     it('emits archive event with task ID when archive button is clicked', () => {
       // arrange
-      const wrapper = mount(Task, { propsData: { task: taskData } });
-      const archiveButton = wrapper.find('.task__archive-button');
+      const { wrapper, archiveButton } = build({ task: taskData });
 
       // act
       archiveButton.trigger('click');
@@ -47,8 +48,7 @@ describe('Task', () => {
 
     it('emits pin task event with task ID when pin task button is clicked', () => {
       // arrange
-      const wrapper = mount(Task, { propsData: { task: taskData } });
-      const pinButton = wrapper.find('.task__pin-button');
+      const { wrapper, pinButton } = build({ task: taskData });
 
       // act
       pinButton.trigger('click');
@@ -62,8 +62,8 @@ describe('Task', () => {
 
   describe('Pinned State', () => {
     it('renders correct markup', () => {
-      const wrapper = mount(Task, {
-        propsData: { task: { ...taskData, state: 'TASK_PINNED' } }
+      const { wrapper } = build({
+        task: { ...taskData, state: 'TASK_PINNED' }
       });
       expect(wrapper.html()).toMatchSnapshot();
     });
@@ -71,8 +71,8 @@ describe('Task', () => {
 
   describe('Archived State', () => {
     it('renders correct markup', () => {
-      const wrapper = mount(Task, {
-        propsData: { task: { ...taskData, state: 'TASK_ARCHIVED' } }
+      const { wrapper } = build({
+        task: { ...taskData, state: 'TASK_ARCHIVED' }
       });
       expect(wrapper.html()).toMatchSnapshot();
     });
