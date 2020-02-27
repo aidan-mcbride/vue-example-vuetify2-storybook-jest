@@ -1,14 +1,14 @@
 // Components
-import PureTaskList from './PureTaskList';
+import BaseTaskList from './BaseTaskList';
 import Task from '@/components/Task/Task';
 
 // Utilities
 import { mount } from '@vue/test-utils';
 import { defaultTasksData, withPinnedTasksData } from './testData';
 
-describe('PureTaskList', () => {
+describe('BaseTaskList', () => {
   const build = propsData => {
-    const wrapper = mount(PureTaskList, { propsData });
+    const wrapper = mount(BaseTaskList, { propsData });
 
     return {
       wrapper

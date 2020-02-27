@@ -28,7 +28,7 @@
 <script>
 import Task from '@/components/Task/Task';
 export default {
-  name: 'PureTaskList',
+  name: 'BaseTaskList',
   components: {
     Task
   },

@@ -1,5 +1,5 @@
 <template>
-  <pure-task-list
+  <base-task-list
     :tasks="tasks"
     @archiveTask="archiveTask"
     @pinTask="pinTask"
@@ -7,13 +7,13 @@
 </template>
 
 <script>
-import PureTaskList from './PureTaskList';
+import BaseTaskList from './BaseTaskList';
 import { mapState, mapActions } from 'vuex';
 
 export default {
   name: 'TaskList',
   components: {
-    PureTaskList
+    BaseTaskList
   },
   computed: {
     ...mapState(['tasks'])

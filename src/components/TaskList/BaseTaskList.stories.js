@@ -1,4 +1,4 @@
-import PureTaskList from './PureTaskList';
+import BaseTaskList from './BaseTaskList';
 
 import { defaultTasksData, withPinnedTasksData } from './testData';
 import { actionsData } from '@/components/Task/Task.stories';
@@ -18,8 +18,8 @@ export default {
 
 // default TaskList state
 export const Default = () => ({
-  components: { PureTaskList },
-  template: `<pure-task-list :tasks="tasks" @archiveTask="onArchiveTask" @pinTask="onPinTask"/>`,
+  components: { BaseTaskList },
+  template: `<base-task-list :tasks="tasks" @archiveTask="onArchiveTask" @pinTask="onPinTask"/>`,
   props: {
     tasks: {
       default: () => defaultTasksData
@@ -30,8 +30,8 @@ export const Default = () => ({
 
 // TaskList with pinned tasks
 export const WithPinnedTasks = () => ({
-  components: { PureTaskList },
-  template: `<pure-task-list :tasks="tasks" @archiveTask="onArchiveTask" @pinTask="onPinTask"/>`,
+  components: { BaseTaskList },
+  template: `<base-task-list :tasks="tasks" @archiveTask="onArchiveTask" @pinTask="onPinTask"/>`,
   props: {
     tasks: {
       default: () => withPinnedTasksData
@@ -42,14 +42,14 @@ export const WithPinnedTasks = () => ({
 
 // loading TaskList state
 export const Loading = () => ({
-  components: { PureTaskList },
-  template: `<pure-task-list loading @archiveTask="onArchiveTask" @pinTask="onPinTask"/>`,
+  components: { BaseTaskList },
+  template: `<base-task-list loading @archiveTask="onArchiveTask" @pinTask="onPinTask"/>`,
   methods: actionsData
 });
 
 // empty TaskList state
 export const Empty = () => ({
-  components: { PureTaskList },
-  template: `<pure-task-list @archiveTask="onArchiveTask" @pinTask="onPinTask"/>`,
+  components: { BaseTaskList },
+  template: `<base-task-list @archiveTask="onArchiveTask" @pinTask="onPinTask"/>`,
   methods: actionsData
 });
