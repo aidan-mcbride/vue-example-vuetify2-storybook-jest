@@ -1,6 +1,6 @@
 // Components
 import BaseTaskList from './BaseTaskList';
-import { Task } from '@/components/Task';
+import Task from '@/components/Task';
 
 // Utilities
 import { mount } from '@vue/test-utils';

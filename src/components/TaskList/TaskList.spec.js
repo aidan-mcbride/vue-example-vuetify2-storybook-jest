@@ -2,7 +2,7 @@ import Vuex from 'vuex';
 
 // Components
 import TaskList from './TaskList';
-import { Task } from '@/components/Task';
+import Task from '@/components/Task';
 
 // Utilities
 import { mount, createLocalVue } from '@vue/test-utils';

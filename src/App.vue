@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { TaskList } from '@/components/TaskList';
+import TaskList from '@/components/TaskList';
 
 export default {
   name: 'App',
