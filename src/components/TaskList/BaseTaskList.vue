@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import Task from '@/components/Task/Task';
+import { Task } from '@/components/Task';
 export default {
   name: 'BaseTaskList',
   components: {
