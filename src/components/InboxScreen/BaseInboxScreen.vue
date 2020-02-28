@@ -7,7 +7,7 @@
 
     <div v-else>
       <nav>
-        <h1 class="title">Taskbox</h1>
+        <h1 class="title primary--text">Taskbox</h1>
       </nav>
 
       <task-list />

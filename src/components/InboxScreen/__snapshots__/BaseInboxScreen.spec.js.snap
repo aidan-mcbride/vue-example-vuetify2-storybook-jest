@@ -4,7 +4,7 @@ exports[`BaseInboxScreen Default state Renders with tasks from store 1`] = `
 <div class="container container--fluid">
   <div>
     <nav>
-      <h1 class="title">Taskbox</h1>
+      <h1 class="title primary--text">Taskbox</h1>
     </nav>
     <div>
       <!---->
