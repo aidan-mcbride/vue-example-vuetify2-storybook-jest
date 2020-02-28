@@ -5,7 +5,7 @@
         <v-row align="center" justify="center">
           <v-col cols="12" sm="8" md="4">
             <v-card>
-              <task-list />
+              <inbox-screen />
             </v-card>
           </v-col>
         </v-row>
@@ -15,13 +15,13 @@
 </template>
 
 <script>
-import TaskList from '@/components/TaskList';
+import InboxScreen from '@/components/InboxScreen';
 
 export default {
   name: 'App',
 
   components: {
-    TaskList
+    InboxScreen
   },
 
   data: () => ({
