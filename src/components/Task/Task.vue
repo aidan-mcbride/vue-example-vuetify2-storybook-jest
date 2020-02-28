@@ -23,7 +23,7 @@
         icon
         @click="$emit('pinTask', task.id)"
       >
-        <v-icon v-if="isPinned" color="blue">mdi-star</v-icon>
+        <v-icon v-if="isPinned" color="primary">mdi-star</v-icon>
         <v-icon v-else>mdi-star-outline</v-icon>
       </v-btn>
     </v-list-item-action>

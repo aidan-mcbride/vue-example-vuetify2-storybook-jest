@@ -18,7 +18,7 @@ _(in no particular order)_
 - [ ] **[Add example app from storybook tutorial, but with vuetify and unit tests](https://www.learnstorybook.com/intro-to-storybook/vue/en/get-started/)**
 - [x] Remove `.storybook/stories`
 - [x] Remove useless(?) vuetify-storybook utils
-- [ ] Refactor so that both app and storybook use the same vuetify config(`./src/plugins/vuetify.js`) - perhaps by refactoring `addon-vuetify/`
+- [x] Refactor so that both app and storybook use the same vuetify config(`./src/plugins/vuetify.js`) - perhaps by refactoring `addon-vuetify/`
 - [x] Refactor component sub-directories to use `index.js` files to export components, so that you don't have to import them as `import MyComponent from '@/components/MyComponent/MyComponent'`
 - [ ] replace `addon-show-vue-markup` with [storysource addon](https://github.com/storybookjs/storybook/tree/master/addons/storysource)?
 - [ ] Add [storyshots](https://github.com/storybookjs/storybook/tree/master/addons/storyshots) for automatic snapshot testing.
@@ -292,6 +292,80 @@ Your `.storybook/` directory should now look something like this:
 |--main.js
 |--preview.js
 ```
+
+### Use application theme within `addon-vuetify`
+
+#### 1. Export vuetify theme options.
+
+[You can read about theming vuetify here](https://vuetifyjs.com/en/customization/theme). Themes are specified in an object, which is then passed into the Vuetify constructor. What we want to do is export this theme options object, like this:
+
+```JavaScript
+// @/plugins/vuetify.js
+
+import Vue from 'vue';
+import Vuetify from 'vuetify/lib';
+
+Vue.use(Vuetify);
+
+export const options = {
+  theme: {
+    dark: true
+  }
+};
+
+export default new Vuetify(options);
+```
+
+#### 2. Refactor `addon-vuetify` to use these theme options
+
+The `addon-vuetify` decorator can be found in `.storybook/addon-vuetify/decorator.js`.
+
+There is a large section of code that looks something like this:
+
+```JavaScript
+// .storybook/addon-vuetify/decorator.js
+
+const searchParams = new URL(window.location).searchParams;
+const dark = searchParams.get('eyes-variation') === 'dark';
+const rtl = searchParams.get('eyes-variation') === 'rtl';
+const vuetify = new Vuetify(
+  deepmerge(
+    {
+      rtl,
+      theme: { dark }
+    },
+    parameters
+  )
+);
+```
+
+This bit allows you to enable dark mode by adding `&eyes-variation=dark` to the end of your storybook url:
+
+```
+http://localhost:6006/?path=/story/task--default&eyes-variation=dark
+```
+
+to enable our custom theme options, we will first import our options, then add them into the `deepmerge` part of the Vuetify constructor:
+
+```JavaScript
+// .storybook/addon-vuetify/decorator.js
+
+import { options } from '@/plugins/vuetify';
+
+//...
+const vuetify = new Vuetify(
+  deepmerge(
+    options,
+    {
+      rtl,
+      theme: { dark }
+    },
+    parameters
+  )
+)
+```
+
+Of note is that the `parameters` argument doesn't seem to do anything at all.
 
 ### Configure [Jest](https://jestjs.io/docs/en/configuration)
 
