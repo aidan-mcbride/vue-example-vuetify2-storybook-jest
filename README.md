@@ -2,6 +2,8 @@
 
 <img src="https://avatars3.githubusercontent.com/u/6128107?s=200&v=4" alt="vue.js logo" href="https://vuejs.org" width=100 height=100 /><img src="https://avatars2.githubusercontent.com/u/22138497?s=200&v=4" alt="vuetify logo" href="https://vuetifyjs.com/en/" width=100 height=100 /><img src="https://avatars0.githubusercontent.com/u/22632046?s=200&v=4" alt="storybook logo" href="https://storybook.js.org/" width=100 height=100 /><img src="https://jestjs.io/img/jest.png" alt="jest logo" href="https://jestjs.io/" width=100 height=100 />
 
+[![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://aidan-mcbride.github.io/vue-example-vuetify2-storybook-jest/) [![jest](https://jestjs.io/img/jest-badge.svg)](https://github.com/facebook/jest)
+
 ---
 
 ## Table of Contents
