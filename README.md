@@ -6,16 +6,16 @@
 
 ## Table of Contents
 
-- [About]()
-  - [Stack]()
-- [Useful Commands]()
+- [About](#about)
+  - [Stack](#stack)
+- [Useful Commands](#useful-commands)
 - [Manual Project Set-up](#manual-project-setup)
-  - [Refactor vuetify-storybook's configuration]()
-  - [Clean up `.storybook/` directory]()
-  - [Use application theme within `addon-vuetify`]()
-  - [Configure Jest]()
-- [References]()
-  - [Documentation]()
+  - [Refactor vuetify-storybook's configuration](#refactor-vuetify-storybooks-configuration)
+  - [Clean up `.storybook/` directory](#clean-up-storybook-directory)
+  - [Use application theme within `addon-vuetify`](#use-application-theme-within-addon-vuetify)
+  - [Configure Jest](#configure-jest)
+- [References](#references)
+  - [Documentation](#documentation)
 
 ---
 
