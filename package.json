@@ -8,7 +8,8 @@
     "test:unit": "vue-cli-service test:unit",
     "test:unit:watch": "vue-cli-service test:unit --watchAll",
     "lint": "vue-cli-service lint",
-    "serve:storybook": "start-storybook -p 6006"
+    "serve:storybook": "start-storybook -p 6006",
+    "build:storybook": "build-storybook -s public"
   },
   "dependencies": {
     "@mdi/font": "^3.6.95",
