@@ -4,27 +4,18 @@
 
 ---
 
-## Roadmap/To-Do list
+## Table of Contents
 
-<!--
-NOTE TO SELF:
-Remember scope of this project:
-Just to create a working example of Vuetify + Storybook + Jest TDD
-Not to create the end-all-be-all example app
--->
-
-_(in no particular order)_
-
-- [ ] **[Add example app from storybook tutorial, but with vuetify and unit tests](https://www.learnstorybook.com/intro-to-storybook/vue/en/get-started/)**
-- [x] Remove `.storybook/stories`
-- [x] Remove useless(?) vuetify-storybook utils
-- [x] Refactor so that both app and storybook use the same vuetify config(`./src/plugins/vuetify.js`) - perhaps by refactoring `addon-vuetify/`
-- [x] Refactor component sub-directories to use `index.js` files to export components, so that you don't have to import them as `import MyComponent from '@/components/MyComponent/MyComponent'`
-- [ ] replace `addon-show-vue-markup` with [storysource addon](https://github.com/storybookjs/storybook/tree/master/addons/storysource)?
-- [ ] Add [storyshots](https://github.com/storybookjs/storybook/tree/master/addons/storyshots) for automatic snapshot testing.
-- [ ] Refactor using [vue component very best practices](https://github.com/pablohpsilva/vuejs-component-style-guide) and [functional components](https://vuejs.org/v2/guide/render-function.html#Functional-Components)?
-- [ ] add table-of-contents to this here `README`
-- [ ] DRY unit tests by abstracting wrapper setup, etc.
+- [About]()
+  - [Stack]()
+- [Useful Commands]()
+- [Manual Project Set-up](#manual-project-setup)
+  - [Refactor vuetify-storybook's configuration]()
+  - [Clean up `.storybook/` directory]()
+  - [Use application theme within `addon-vuetify`]()
+  - [Configure Jest]()
+- [References]()
+  - [Documentation]()
 
 ---
 
